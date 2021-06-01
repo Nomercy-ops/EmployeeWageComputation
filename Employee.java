@@ -2,21 +2,25 @@ public class Employee{
 	static final int isFullTime = 1;
 	static final int isPartTime = 2;
 	static final int wageRatePerHour = 20;
-	static int workingDayPerMonth = 20;
+	static final int workingDayPerMonth = 20;
+	static  final int  maxHoursInMonth = 100;
 	static int employeeMonthlyWage = 0;
-	int employeeDailyWage = 0;
+	static int workRatePerHour = 0;
 
 	void employeeWageCalculation( int workRatePerHour ) {
-		 employeeDailyWage = wageRatePerHour * workRatePerHour;
+		 int employeeDailyWage = wageRatePerHour * workRatePerHour;
 		 employeeMonthlyWage += employeeDailyWage;
+		 Employee.workRatePerHour=workRatePerHour;
 		 System.out.println("Employee Daily wage is : " +employeeDailyWage +"$");
 	}
 
 	public static void main(String [] args){
-	Employee employee = new Employee();
-	System.out.println("Welcome to Employee Wage Computation Program");
+		int totalEmployeeHours = 0;
+		int totalWorkingDays = 0;
+		System.out.println("Welcome to Employee Wage Computation Program");
+		 Employee employee = new Employee();
 
-	for (int day = 0; day<workingDayPerMonth; day++ ){
+	while (totalEmployeeHours <= maxHoursInMonth && totalWorkingDays < workingDayPerMonth ) {
 	int attendanceCheck = (int)(Math.random()*3);
 	switch (attendanceCheck){
 			case isFullTime:
@@ -30,7 +34,10 @@ public class Employee{
 			default:
 			employee.employeeWageCalculation(0);
 		     }
+			totalWorkingDays++;
+			totalEmployeeHours += workRatePerHour;
 		}
+	  System.out.println("Employee Total Hours is :" +totalEmployeeHours  +"$");
 	  System.out.println("Employee Monthly wage is :" +employeeMonthlyWage  +"$");
 }
 }
