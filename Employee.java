@@ -13,13 +13,16 @@ public class Employee{
 	Employee employee = new Employee();
 	System.out.println("Welcome to Employee Wage Computation Program");
 	int attendanceCheck = (int)(Math.random()*3);
-	if (attendanceCheck == isFullTime){
+	switch (attendanceCheck){
+			case isFullTime:
 			employee.employeeWageCalculation(8);
-		}
-		else if (attendanceCheck == isPartTime){
+			break;
+
+			case isPartTime:
 			employee.employeeWageCalculation(4);
-		}
-		else {
+			break;
+
+			default:
 			employee.employeeWageCalculation(0);
 		     }
 }
