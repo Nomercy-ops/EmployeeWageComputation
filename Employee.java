@@ -37,7 +37,8 @@ public class Employee{
 			totalWorkingDays++;
 			totalEmployeeHours += workRatePerHour;
 		}
-	  System.out.println("Employee Total Hours is :" +totalEmployeeHours  +"$");
+	  System.out.println("Employee Total Working Hours is :" +totalEmployeeHours  +" hrs");
 	  System.out.println("Employee Monthly wage is :" +employeeMonthlyWage  +"$");
+	  System.out.println("Employee Total Working Days is : " +totalWorkingDays +" days")
 }
 }
