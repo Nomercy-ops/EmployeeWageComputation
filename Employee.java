@@ -1,5 +1,6 @@
 public class Employee{
 	static final int isFullTime = 1;
+	static final int isPartTime = 2;
 	static final int wageRatePerHour = 20;
 	int employeeDailyWage = 0;
 
@@ -11,12 +12,15 @@ public class Employee{
 	public static void main(String [] args){
 	Employee employee = new Employee();
 	System.out.println("Welcome to Employee Wage Computation Program");
-	int attendanceCheck = (int)(Math.random()*2);
+	int attendanceCheck = (int)(Math.random()*3);
 	if (attendanceCheck == isFullTime){
-		employee.employeeWageCalculation(8);
+			employee.employeeWageCalculation(8);
 		}
-		else{
-		employee.employeeWageCalculation(0);
-	}
+		else if (attendanceCheck == isPartTime){
+			employee.employeeWageCalculation(4);
+		}
+		else {
+			employee.employeeWageCalculation(0);
+		     }
 }
 }
